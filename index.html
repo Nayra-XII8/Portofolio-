@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayra Portfolio | Creative Scrapbook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fcfaf2; 
+            --paper-white: #ffffff;
+            --accent-red: #ff0000; /* High Contrast Red */
+            --accent-yellow: #ffcc00; /* Bold Yellow */
+            --accent-blue: #0066ff; /* Electric Blue */
+            --contrast-black: #000000;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(var(--contrast-black) 1px, transparent 1px);
+            background-size: 20px 20px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--contrast-black);
+            overflow-x: hidden;
+        }
+
+        .marker-font {
+            font-family: 'Permanent Marker', cursive;
+        }
+
+        /* High Contrast Paper Card */
+        .paper-card {
+            background: var(--paper-white);
+            box-shadow: 8px 8px 0px var(--contrast-black);
+            border: 3px solid var(--contrast-black);
+            position: relative;
+        }
+
+        .paper-edge {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 96%, 98% 100%, 95% 95%, 90% 100%, 85% 95%, 80% 100%, 75% 95%, 70% 100%, 65% 95%, 60% 100%, 55% 95%, 50% 100%, 45% 95%, 40% 100%, 35% 95%, 30% 100%, 25% 95%, 20% 100%, 15% 95%, 10% 100%, 5% 95%, 0% 100%);
+        }
+
+        .ticket-cutout {
+            position: relative;
+            background: var(--accent-yellow);
+            border: 3px solid var(--contrast-black);
+            mask-image: radial-gradient(circle at 0% 50%, transparent 10px, black 11px), 
+                        radial-gradient(circle at 100% 50%, transparent 10px, black 11px);
+            mask-composite: intersect;
+        }
+
+        .star-decor {
+            position: absolute;
+            color: var(--accent-red);
+            font-size: 1.5rem;
+            filter: drop-shadow(2px 2px 0px var(--contrast-black));
+            z-index: 10;
+        }
+
+        .sticker {
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .sticker:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        nav a {
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            transition: all 0.2s;
+        }
+
+        nav a:hover {
+            background: var(--accent-red);
+            color: white;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(2deg); }
+            50% { transform: translateY(-8px) rotate(-1deg); }
+            100% { transform: translateY(0px) rotate(2deg); }
+        }
+
+        .float-anim {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .bg-hatch {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(0,0,0,0.05) 8px, rgba(0,0,0,0.05) 16px);
+        }
+    </style>
+</head>
+<body class="p-3 md:p-8">
+
+    <!-- Header -->
+    <header class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center mb-12 gap-6 relative">
+        <div class="star-decor -top-4 -left-4">✦</div>
+        <div class="bg-accent-yellow border-4 border-black px-6 py-2 shadow-[6px_6px_0px_#000] -rotate-2">
+            <h1 class="text-2xl font-black tracking-tighter uppercase italic">NAYRA.SPACE</h1>
+        </div>
+        <nav class="bg-white border-4 border-black shadow-[6px_6px_0px_#000] flex flex-wrap justify-center overflow-hidden ticket-cutout">
+            <a href="#home" class="px-4 py-2 font-black border-r-4 border-black transition-all">HOME</a>
+            <a href="#about" class="px-4 py-2 font-black border-r-4 border-black transition-all">ABOUT</a>
+            <a href="#passion" class="px-4 py-2 font-black border-r-4 border-black transition-all">PASSION</a>
+            <a href="#skills" class="px-4 py-2 font-black border-r-4 border-black transition-all">SKILLS</a>
+            <a href="#education" class="px-4 py-2 font-black border-r-4 border-black transition-all uppercase">EDU</a>
+            <a href="#contact" class="px-4 py-2 font-black transition-all">CONTACT</a>
+        </nav>
+        <div class="star-decor -bottom-4 -right-4">✦</div>
+    </header>
+
+    <main class="max-w-5xl mx-auto space-y-20">
+
+        <!-- Section 1: Home -->
+        <section id="home" class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative">
+            <div class="lg:col-span-5 relative">
+                <div class="paper-card p-4 rotate-3 float-anim bg-hatch max-w-sm mx-auto lg:mx-0">
+                    <div class="bg-white aspect-[3/4] overflow-hidden border-4 border-black flex items-center justify-center shadow-inner">
+                        <img src="https://lh3.googleusercontent.com/d/1e1-YCUOPsja-bmMfEEwDqI_Bnrf5nITs" alt="Nayra's Character" class="w-full h-full object-contain p-2">
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="marker-font text-2xl text-red-600">The Creative Mind!</p>
+                    </div>
+                    <div class="absolute -top-8 -left-8 w-24 h-24 bg-blue-600 rounded-full border-4 border-white flex items-center justify-center -rotate-12 shadow-[4px_4px_0px_#000] sticker text-white font-black text-xs text-center leading-tight">
+                        HI!<br>NAYRA<br>HERE
+                    </div>
+                    <div class="star-decor top-2 right-2">★</div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 bg-red-600 paper-card p-8 md:p-12 -rotate-1">
+                <div class="star-decor top-2 right-2 text-white">★</div>
+                <h2 class="text-white text-5xl md:text-7xl font-black mb-6 stroke-black uppercase leading-none drop-shadow-[4px_4px_0px_#000]">HI THERE!</h2>
+                <div class="bg-white p-6 border-4 border-black relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-yellow-400 -mr-10 -mt-10 rotate-45 border-l-4 border-black"></div>
+                    <p class="text-base md:text-lg leading-relaxed mb-6 relative z-10 font-bold">
+                        I am <strong>Nayra</strong>, a passionate 12th-grade student interested in the creative and technology industries. Creating meaningful works is my daily drive!
+                    </p>
+                    <div class="flex gap-4 relative z-10">
+                        <a href="#achievement" class="bg-yellow-400 border-4 border-black px-6 py-2 font-black text-sm shadow-[5px_5px_0px_#000] hover:translate-y-1 hover:shadow-none transition-all inline-block uppercase">
+                            My Journey ↓
+                        </a>
+                        <a href="#contact" class="bg-white border-4 border-black px-6 py-2 font-black text-sm shadow-[5px_5px_0px_#000] hover:translate-y-1 hover:shadow-none transition-all inline-block uppercase">
+                            Connect
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Passion -->
+        <section id="passion" class="relative">
+            <div class="text-center mb-10">
+                <h2 class="marker-font text-4xl inline-block border-b-8 border-blue-600 uppercase italic">My Passions</h2>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="https://medium.com/@havingfun4everrrr" target="_blank" class="sticker bg-white border-4 border-black px-6 py-3 rotate-3 shadow-[6px_6px_0px_#000]">
+                    <span class="text-blue-600 text-2xl mr-3">✍️</span>
+                    <span class="font-black text-lg uppercase">Writing</span>
+                </a>
+                <a href="https://www.instagram.com/p/DKCcNdlTr41/?img_index=1&igsh=MWVxbGltcTh5Y2txYw==" target="_blank" class="sticker bg-yellow-400 border-4 border-black px-6 py-3 -rotate-2 shadow-[6px_6px_0px_#000]">
+                    <span class="text-red-600 text-2xl mr-3">🎨</span>
+                    <span class="font-black text-lg uppercase">Painting</span>
+                </a>
+                <div class="sticker bg-blue-600 text-white border-4 border-black px-6 py-3 rotate-1 shadow-[6px_6px_0px_#000]">
+                    <span class="text-white text-2xl mr-3">🚀</span>
+                    <span class="font-black text-lg uppercase">Try New Things</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: About & Skills -->
+        <section id="about" class="grid grid-cols-1 md:grid-cols-2 gap-10 relative">
+            <div class="star-decor -top-8 left-1/2">✦</div>
+            <!-- About Me -->
+            <div class="paper-card paper-edge p-8 rotate-1">
+                <div class="bg-blue-600 text-white inline-block px-4 py-1 mb-4 -rotate-3 font-black text-sm uppercase shadow-[3px_3px_0px_#000]">About Me</div>
+                <h3 class="text-2xl font-black mb-1 italic">Nayra Shafa A.</h3>
+                <p class="text-xs font-black text-red-600 mb-4 tracking-widest uppercase">Subang, Dec 21, 2007</p>
+                <p class="text-base font-bold mb-4">Started with curiosity about digital world, I began learning design and writing. I believe creativity has no boundaries.</p>
+                <div class="grid grid-cols-2 gap-4 mt-6">
+                    <div class="border-4 border-dashed border-black p-3 text-center bg-yellow-100">
+                        <span class="block font-black text-3xl leading-none">18</span>
+                        <span class="text-xs font-black uppercase">Age</span>
+                    </div>
+                    <div class="border-4 border-dashed border-black p-3 text-center bg-white">
+                        <span class="block font-black text-3xl leading-none">12th</span>
+                        <span class="text-xs font-black uppercase">Grade</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div id="skills" class="paper-card p-8 -rotate-1 bg-yellow-400">
+                <div class="bg-black text-white inline-block px-4 py-1 mb-6 rotate-2 font-black text-sm uppercase">My Skills</div>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-black uppercase text-xs">English</span>
+                            <span class="text-black font-black text-xs">EXPERT</span>
+                        </div>
+                        <div class="h-4 bg-white border-4 border-black overflow-hidden shadow-[3px_3px_0px_#000]">
+                            <div class="h-full bg-red-600 w-[85%] border-r-4 border-black"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-black uppercase text-xs">Writing</span>
+                            <span class="text-black font-black text-xs">PRO</span>
+                        </div>
+                        <div class="h-4 bg-white border-4 border-black overflow-hidden shadow-[3px_3px_0px_#000]">
+                            <div class="h-full bg-blue-600 w-[75%] border-r-4 border-black"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-black uppercase text-xs">Leadership</span>
+                            <span class="text-black font-black text-xs">LEGEND</span>
+                        </div>
+                        <div class="h-4 bg-white border-4 border-black overflow-hidden shadow-[3px_3px_0px_#000]">
+                            <div class="h-full bg-black w-[95%] border-r-4 border-black"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Education -->
+        <section id="education" class="paper-card p-8 md:p-12 bg-white relative">
+            <div class="star-decor top-4 right-4 text-red-600">★</div>
+            <div class="text-center mb-10">
+                <h2 class="marker-font text-4xl inline-block border-b-8 border-red-600 uppercase">Education</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white border-4 border-black p-4 shadow-[6px_6px_0px_#000] rotate-2 ticket-cutout flex flex-col justify-between h-40">
+                    <div class="text-red-600 font-black text-sm">2012-14</div>
+                    <h4 class="font-black text-sm uppercase leading-tight">Kindergarten</h4>
+                    <p class="text-xs font-bold text-gray-700 italic">TKIT Alfurqon</p>
+                </div>
+                <div class="bg-white border-4 border-black p-4 shadow-[6px_6px_0px_#000] -rotate-1 ticket-cutout flex flex-col justify-between h-40">
+                    <div class="text-blue-600 font-black text-sm">2014-20</div>
+                    <h4 class="font-black text-sm uppercase leading-tight">Elementary</h4>
+                    <p class="text-xs font-bold text-gray-700 italic">SDIT 'Alamy</p>
+                </div>
+                <div class="bg-white border-4 border-black p-4 shadow-[6px_6px_0px_#000] rotate-1 ticket-cutout flex flex-col justify-between h-40">
+                    <div class="text-black font-black text-sm bg-yellow-400 inline-block px-1">2020-23</div>
+                    <h4 class="font-black text-sm uppercase leading-tight">Junior High</h4>
+                    <p class="text-xs font-bold text-gray-700 italic">SMPIT 'Alamy</p>
+                </div>
+                <div class="bg-accent-red border-4 border-black p-4 shadow-[6px_6px_0px_#000] -rotate-2 ticket-cutout flex flex-col justify-between h-40">
+                    <div class="text-white font-black text-sm italic">NOW</div>
+                    <h4 class="font-black text-sm uppercase leading-tight text-white">Senior High</h4>
+                    <p class="text-xs font-bold text-white italic">SMAN 1 Subang</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Achievement & Experience -->
+        <section id="achievement" class="grid grid-cols-1 lg:grid-cols-12 gap-10 relative">
+            <div class="star-decor -top-6 -right-2">✦</div>
+            <div class="lg:col-span-4 paper-card p-6 bg-yellow-50">
+                <h3 class="marker-font text-3xl mb-6 text-red-600">Awards</h3>
+                <ul class="space-y-6">
+                    <li class="border-b-4 border-black pb-4">
+                        <p class="font-black uppercase text-xs text-red-600">1st Winner</p>
+                        <p class="font-black text-base leading-tight uppercase">Performance Art</p>
+                        <p class="text-xs italic font-bold text-gray-600 mt-2">School Creation Competition</p>
+                    </li>
+                    <li class="border-b-4 border-black pb-4">
+                        <p class="font-black uppercase text-xs text-blue-600">2nd Winner</p>
+                        <p class="font-black text-base leading-tight uppercase">Book Review</p>
+                        <p class="text-xs italic font-bold text-gray-600 mt-2">Gerakan Literasi 'Alamy</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="lg:col-span-8 paper-card p-6 bg-hatch">
+                <h3 class="marker-font text-3xl mb-6 text-blue-600">Activity</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <tbody class="text-xs font-black">
+                            <tr class="border-b-4 border-black/20">
+                                <td class="py-3 px-2 bg-yellow-400">2025</td>
+                                <td class="py-3 px-4"><span class="uppercase">Division 'Odyssey'</span> - SMAN 1 Subang</td>
+                            </tr>
+                            <tr class="border-b-4 border-black/20">
+                                <td class="py-3 px-2 bg-blue-600 text-white">2025</td>
+                                <td class="py-3 px-4"><span class="uppercase">PIC Essay</span> - SMAN 1 Subang</td>
+                            </tr>
+                            <tr class="border-b-4 border-black/20">
+                                <td class="py-3 px-2 bg-red-600 text-white">24/25</td>
+                                <td class="py-3 px-4"><span class="uppercase">Treasurer 1</span> - Journalism Club</td>
+                            </tr>
+                            <tr class="border-b-4 border-black/20">
+                                <td class="py-3 px-2 bg-black text-white">2024</td>
+                                <td class="py-3 px-4"><span class="uppercase">PIC Essay</span> - Language Month</td>
+                            </tr>
+                            <tr class="border-b-4 border-black/20">
+                                <td class="py-3 px-2 bg-yellow-400">21/22</td>
+                                <td class="py-3 px-4"><span class="uppercase">Head Dept 9</span> - Student Council</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Contact -->
+        <section id="contact" class="flex justify-center pb-12 relative">
+            <div class="star-decor bottom-0 left-0">✦</div>
+            <div class="paper-card p-10 bg-white max-w-xl w-full text-center relative overflow-hidden ticket-cutout">
+                <h2 class="text-4xl font-black mb-8 uppercase italic drop-shadow-[3px_3px_0px_#000]">Say Hello!</h2>
+                <div class="flex flex-col sm:flex-row gap-6 relative z-10">
+                    <a href="https://wa.me/6289699674208" target="_blank" class="flex-1 bg-green-500 border-4 border-black py-4 font-black text-sm shadow-[6px_6px_0px_#000] hover:translate-y-1 hover:shadow-none transition-all flex items-center justify-center">WHATSAPP</a>
+                    <a href="https://www.instagram.com/nyrashf?igsh=MWpyMjY3MWp3NzJ2Yw==" target="_blank" class="flex-1 bg-pink-600 border-4 border-black py-4 font-black text-white text-sm shadow-[6px_6px_0px_#000] hover:translate-y-1 hover:shadow-none transition-all flex items-center justify-center">INSTAGRAM</a>
+                </div>
+                <p class="mt-10 font-black text-lg uppercase italic border-t-4 border-dashed border-black pt-6">nayeayraa12@gmail.com</p>
+            </div>
+            <div class="star-decor top-0 right-0">✦</div>
+        </section>
+
+    </main>
+
+    <footer class="text-center pb-12 mt-10">
+        <div class="bg-black text-white inline-block px-10 py-2 font-black rotate-1 uppercase tracking-widest text-xs border-4 border-red-600 shadow-[6px_6px_0px_#ff0000]">
+            © 2026 NAYRA SHAFA A. — CREATIVE PASS
+        </div>
+    </footer>
+
+</body>
+</html>
